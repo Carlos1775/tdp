@@ -1,4 +1,4 @@
-para descargar entrar en este link https://www.mediafire.com/file/vdpay5fl4156l06/tdp.apk/file
+para descargar entrar en este link https://www.mediafire.com/file/7mj4h5h8f07e4hh/Gestor_Stock.apk/file
 luego de instalar en su celular tendra 3 botones
 el primero de ellos abrira una interfaz que hara sumas de valores de venta y los guardara en un archivo,
 el siguiente abrira una interfaz que sera un controlador de stock, 
