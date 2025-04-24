@@ -4,4 +4,4 @@ el primero de ellos abrira una interfaz que hara sumas de valores de venta y los
 el siguiente abrira una interfaz que sera un controlador de stock, 
 que puede agregar o quitar stock de un producto, tambien podra agregar nuevos productos o quitar productos anteriores
 el ultimo de los botones sera para cerrar la aplcacion.
-para abrir el codigo fuente debera descargar el zip "tdp" y abrirlo en un nuevo proyecto de flutlab.
+para abrir el codigo fuente debera descargar el zip "tdpcarlospoblete" y abrirlo en un nuevo proyecto de flutlab.
