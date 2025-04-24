@@ -1,0 +1,96 @@
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+
+class DBService {
+  static Database? _database;
+
+  static Future<Database> get database async {
+    if (_database != null) return _database!;
+    _database = await _initDB('productos.db');
+    return _database!;
+  }
+
+  static Future<Database> _initDB(String fileName) async {
+    final path = join(await getDatabasesPath(), fileName);
+
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: (db, version) async {
+        // 👇 SCRIPT DE CREACIÓN
+        await db.execute('''
+          CREATE TABLE productos (
+            codigo TEXT PRIMARY KEY,
+            nombre TEXT,
+            stock INTEGER
+          )
+        ''');
+
+        // 👇 INSERCIÓN DE DATOS INICIALES
+        await db.transaction((txn) async {
+          final productos = [
+            ('P001', 'Galletas kuky', 50),
+            ('P002', 'Galletas Triton', 40),
+            ('P003', 'Galletas Oblea', 30),
+            ('P004', 'Galletas Oreo', 60),
+            ('P005', 'Galletas Maravilla', 25),
+            ('P006', 'Hamburguesa Vacuno', 35),
+            ('P007', 'Hamburguesa Pollo', 45),
+            ('P008', 'Not Burger', 20),
+            ('P009', 'Queso Crema', 55),
+            ('P010', 'Pate Ternera', 40),
+            ('P011', 'Pate Pollo', 35),
+            ('P012', 'Pate Jamon', 30),
+            ('P013', 'Queso Philadelphia', 25),
+            ('P014', 'Jugos srpim Durazno', 70),
+            ('P015', 'Jugos srpim Frutilla', 60),
+            ('P016', 'Jugos srpim Melon', 50),
+            ('P017', 'Jugos srpim Multifruta', 65),
+            ('P018', 'Jugos srpim Naranja', 55),
+            ('P019', 'Jugos srpim Piña', 45),
+            ('P020', 'Empanada Pino', 30),
+            ('P021', 'Empanada Pino Merken', 25),
+            ('P022', 'Empanada Napolitana', 20),
+            ('P023', 'Empanada Pollo Queso', 30),
+            ('P024', 'Empanada Camaron Queso', 15),
+            ('P025', 'Empanada Queso', 40),
+            ('P026', 'Empanada Mechada Queso', 20),
+            ('P027', 'Marraqueta', 100),
+            ('P028', 'Hallulla', 80),
+            ('P029', 'Pan Integral', 60),
+            ('P030', 'Coca Cola 1.25', 70),
+            ('P031', 'Coca Cola 2', 60),
+            ('P032', 'Coca Cola 3', 50),
+            ('P033', 'Coca Cola Zero 1.25', 40),
+            ('P034', 'Coca Cola Zero 2', 35),
+            ('P035', 'Coca Cola Zero 3', 30),
+            ('P036', 'Fanta 1.25', 55),
+            ('P037', 'Fanta 2', 45),
+            ('P038', 'Fanta 3', 35),
+            ('P039', 'Sprite 1.25', 50),
+            ('P040', 'Sprite 2', 40),
+            ('P041', 'Sprite 3', 30),
+            ('P042', 'Score', 20),
+            ('P043', 'Monster', 15),
+            ('P044', 'Rockstar', 10),
+            ('P045', 'Choclo Cong', 25),
+            ('P046', 'Arvejas Cong', 25),
+            ('P047', 'Habas Cong', 25),
+            ('P048', 'Hielo', 80),
+            ('P049', 'Torta Vaso', 10),
+            ('P050', 'Berlin', 15),
+            ('P051', 'Pan Dulce', 20)
+          ];
+
+          for (var p in productos) {
+            await txn.insert('productos', {
+              'codigo': p.$1,
+              'nombre': p.$2,
+              'stock': p.$3,
+            });
+          }
+        });
+      },
+    );
+  }
+}
