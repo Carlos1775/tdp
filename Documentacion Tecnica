@@ -1,0 +1,58 @@
+# 📱 "Gestor de Stock"
+"Gestor de Stock" es una aplicación Android ligera y fácil de usar que permite a pequeñas empresas y emprendedores llevar el control de su inventario desde el teléfono, sin necesidad de conexión a internet.
+
+---
+
+## ✅ Características principales
+
+- 📦 Registro de productos (nombre, código, stock)
+- 🔍 Búsqueda rápida por nombre o código
+- 💸 Gestión de montos de ventas
+
+---
+
+## ⚙️ Requisitos del sistema
+
+- Android: 6.0 o superior
+- RAM mínima: 1 GB
+- Almacenamiento libre: 50 MB
+- Permisos: Almacenamiento 
+
+---
+
+## 📲 Instalación
+ 
+Desde MediaFire.
+> https://www.mediafire.com/file/58xbhuo2ar8sz1c/tdp+(1).apk/file
+
+### Manual (APK)
+1. Descarga el archivo ["tdp"]
+2. Habilita “Fuentes desconocidas” en los ajustes del dispositivo
+3. Instala y abre la aplicación
+
+---
+
+## 🗃️ Estructura de datos
+
+- Base de datos local: `SQLite`
+- Respaldo: Local
+
+
+## 🛠️ Tecnologías usadas
+
+- Lenguaje: Dart/ Flutter
+- Gestión de dependencias:** Gradle
+
+
+## 🧪 Testing
+
+- Pruebas en dispositivos Android 6.0 a 12
+- Verificado en resoluciones pequeñas y medianas
+
+---
+
+## 📬 Contacto
+
+- Correo: Carlos.pobletea@mayor.cl
+
+
